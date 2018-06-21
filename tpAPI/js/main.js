@@ -39,8 +39,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "GET",
 		url:'https://api.twitch.tv/kraken/users/Pink_Whale/follows/channels/',
-		headers:{
-			'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
 		success:function(data2){
 			debugger;
 			for (var i = 0; i < data2.follows.length; i++) {
@@ -55,6 +54,30 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+	$.ajax({
+		type: "GET",
+		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
+		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		success:function(data3, data4){
+			debugger;
+			console.log(data3.display_name);
+			$("#userName").html(data3.display_name);
+			
+		}
+	})
+
+	$.ajax({
+		type: "GET",
+		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
+		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		success:function(data4){
+			debugger;
+			console.log(data4.created_at);
+			$("#createDate").html(data4.created_at);
+
+		}
+	})
 
 	
 });
