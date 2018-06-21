@@ -11,7 +11,7 @@ http.createServer(function(req,res){
 
 if(req.url == "/index"){
 
-	fs.readFile('html/index.html', function(err, data) {
+	fs.readFile('../index.html', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
     res.end();
