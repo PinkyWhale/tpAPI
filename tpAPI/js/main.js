@@ -59,7 +59,7 @@ $(document).ready(function(){
 		type: "GET",
 		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
 		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
-		success:function(data3, data4){
+		success:function(data3){
 			debugger;
 			console.log(data3.display_name);
 			$("#userName").html(data3.display_name);
@@ -75,6 +75,18 @@ $(document).ready(function(){
 			debugger;
 			console.log(data4.created_at);
 			$("#createDate").html(data4.created_at);
+
+		}
+	})
+
+	$.ajax({
+		type: "GET",
+		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
+		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		success:function(data5){
+			debugger;
+			console.log(data5.logo); // en console de html aparece la url pero no puedo hacerlo aparecer
+			$("#part1").prepend("<img src='" + data5.logo + "'>");
 
 		}
 	})

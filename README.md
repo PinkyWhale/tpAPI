@@ -5,7 +5,8 @@ Para levantar el server hay que ubicarse en la carpeta en donde se encuentra el 
 
 	- pinky@pingui ~/Ada/tpAPI/ (git)-[master] % node server.js
 	
-	- Si tienen Nodemon lo siguiente:
+Si tienen Nodemon lo siguiente:
+
 	- pinky@pingui ~/Ada/TPcharlaAPI (git)-[master] % nodemon server.js 
 
 

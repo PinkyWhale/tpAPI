@@ -14,14 +14,20 @@
 }
 /*CLASSes*/
 
-.encabezado{
-    top: 4ems;
+
+.encabezado h2{
+    padding: 2em;
+    color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.part2{
+    top: 2em;
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.encabezado h2{
-    color:white;
 }
 
 .background{
