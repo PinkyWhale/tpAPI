@@ -18,7 +18,7 @@ if(req.url == "/"){
   });
 
 }else{
-	res.write("no esta leyendo el html");
+	res.write("ERROR");
 	res.end();
 }
 
