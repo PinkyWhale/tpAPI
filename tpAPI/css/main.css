@@ -40,3 +40,18 @@ body{
     color:white;
 
 }
+.row{
+    width: 90%;
+    height: 50px;
+}
+.logoF{ 
+    width: 45px;
+    height: 45px;
+
+}
+.usuarioF{
+    text-align: center;
+}
+.statusF{
+    text-align: center;
+}
