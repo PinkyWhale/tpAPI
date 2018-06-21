@@ -10,7 +10,8 @@
     border-radius: 30px;
     margin: 0 auto;
     width: 80%;
-    padding: 15px 15px 65px 15px;
+    padding: 15px;
+    overflow: hidden;
 }
 /*CLASSes*/
 
@@ -55,16 +56,19 @@
 }
 .row{
     width: 90%;
-    height: 250px;
+    height: 150px;
 }
-.logoF{ 
-    width: 45px;
-    height: 45px;
+.logoF img{ 
+    width: 145px;
+    height: 145px;
+    float: left;
+}
 
-}
 .usuarioF{
-    text-align: right;
+    text-align: center;
+    padding-top: 20px;
 }
 .statusF{
-    text-align: right;
+    text-align: center;
+    padding-top: 20px;
 }
