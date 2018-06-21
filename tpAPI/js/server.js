@@ -1,7 +1,16 @@
 //paquetes necesarios para el proyecto
 var http = require('http');
 var fs = require('fs');
-//var miControlador = require('./controladores/funciones');
+
+var mime_types = {
+  'js' : 'text/javascript',
+  'html' : 'text/html',
+  'css' : 'text/css',
+  'jpg' : 'image/jpg',
+  'gif' : 'image/gif',
+  'png' : 'image/png'
+};
+
 
 //seteamos el puerto en el cual va a escuchar los pedidos la aplicación
 var puerto = '5050';
@@ -18,7 +27,8 @@ if(req.url == "/"){
   });
 
 }else{
-	res.write("ERROR");
+  res.write("ERROR");
+  
 	res.end();
 }
 
