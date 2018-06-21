@@ -9,7 +9,7 @@ var puerto = '5050';
 http.createServer(function(req,res){
 //res.writeHead(200,{'Content-type':'text/html'});
 
-if(req.url == "/index"){
+if(req.url == "/"){
 
 	fs.readFile('../index.html', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -18,7 +18,7 @@ if(req.url == "/index"){
   });
 
 }else{
-	res.write("Bienvenidos");
+	res.write("no esta leyendo el html");
 	res.end();
 }
 
