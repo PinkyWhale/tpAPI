@@ -86,7 +86,7 @@ $(document).ready(function(){
 		success:function(data5){
 			debugger;
 			console.log(data5.logo); // en console de html aparece la url pero no puedo hacerlo aparecer
-			$("#part1").prepend("<img src='" + data5.logo + "'>");
+			$(".part1").prepend("<img src='" + data5.logo + "'>");
 
 		}
 	})

@@ -16,12 +16,35 @@
 /*CLASSes*/
 
 
+.encabezado{
+    overflow: auto;
+    position: relative;
+}
+
+
+.part1{
+    /*float: left;*/
+    padding: 2em;
+    width: 145px;
+    position: absolute;
+    left: 7em;
+}
+
+
+/*No es responsive la posición de esta imagen, por las dudas aviso*/
+
+
+.part1 img{
+    width: 145px;
+}
+
 .encabezado h2{
     padding: 2em;
     color:white;
     display: flex;
     align-items: center;
     flex-direction: row;
+    text-align: center;
 }
 
 .part2{
@@ -29,6 +52,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .background{
