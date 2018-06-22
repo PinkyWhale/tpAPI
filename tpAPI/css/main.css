@@ -17,8 +17,9 @@
 
 
 .encabezado{
-    overflow: auto;
+    overflow: hidden;
     position: relative;
+    margin-bottom: 2em;
 }
 
 
@@ -39,7 +40,8 @@
 }
 
 .encabezado h2{
-    padding: 2em;
+    padding: 1em;
+    margin: 1em 1em 0 1em;
     color:white;
     display: flex;
     align-items: center;
