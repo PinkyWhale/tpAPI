@@ -37,15 +37,15 @@ $(document).ready(function(){
 				// !'' = true
 				// !!{} = true
 				// !false = true
-				
+
 			if (!resp.stream) {
 				$("#userStatus").html("STREAMER off");
 			} else {
 				$("#userStatus").html("STREAMER on");
-			}	
+			}
 		}
 	});
- 
+
 	//Pedido de Follows
 	$.ajax({
 		type: "GET",
@@ -54,29 +54,38 @@ $(document).ready(function(){
 	},
 		success: function(response) {
 			response.follows.map((follow) => {
-			// sacamos del objeto channel las keys, display_name, logo y status (esto se llama DESTRUCTURING ES6)
+					// Sacamos del obj follow.channel las keys
+					// (esto se llama DESTRUCTURING ES6)
 			    const {
 			    	display_name,
 			    	logo,
 			    	status,
+						views,
+						followers
 			    } = follow.channel;
-    
+
 			    $("#favUs").prepend(`
 			       <div class="row" >
-			    	   <div class="logo-container">
-			    	       <a href="https://www.twitch.tv/${display_name}" target="_blank">
-			    	           <img src="${logo}" class="logoF">
-			    	       </a>
-			    	   </div>
-			    	   <div class= usuarioF>
-			    	        ${display_name}
-			    	   </div>  
-			    	   <div class="statusF">
-			    			${status}
-			    	   </div> 
+			        	<a href="https://www.twitch.tv/${display_name}" target="_blank">
+										<div class="logo-container">
+												 <img src="${logo}" class="logoF">
+										</div>
+										<div class= usuarioF>
+												${display_name}
+										</div>  
+										<div class="statusF">
+												${status}
+										</div> 
+										<div class="fans">
+												Vistas totales: ${views} <i class="fas fa-eye"></i>
+										</div>
+										<div class="fans">
+												seguidores: ${followers} <i class="fas fa-users"></i>
+										</div>
+							 </a>
 			       </div>     
 			    `);
-	        }); 
+	        });
 		}
     });
 
@@ -85,7 +94,7 @@ $(document).ready(function(){
 		url: `${BASE_URL}/users/Pink_Whale`,
 		headers:{'Client-ID': CLIENT_ID
 	},
-		success: function(user) {			
+		success: function(user) {
 			$("#userName").html(user.display_name);
 			$("#createDate").html(user.created_at);
 			$(".part1").prepend(`<img src='${user.logo}'>`);

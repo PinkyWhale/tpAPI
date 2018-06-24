@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'
 }
 
 /*IDs*/
-#favUs{
+#favUs {
     background-color: whitesmoke;
-    border-radius: 30px;
+    border-radius: 10px;
     margin: 0 auto;
     width: 80%;
     padding: 15px;
@@ -16,40 +16,32 @@
 /*CLASSes*/
 
 
-.encabezado{
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 2em;
+.encabezado {
+    display: flex;
+    justify-content: center;
 }
 
 
-.part1{
-    /*float: left;*/
+.part1 {
     padding: 2em;
     width: 145px;
-    position: absolute;
-    left: 7em;
 }
+/*Ya es responsive :D*/
 
 
-/*No es responsive la posición de esta imagen, por las dudas aviso*/
-
-
-.part1 img{
+.part1 img {
     width: 145px;
+    height: 145px;
 }
 
-.encabezado h2{
+.encabezado h2 {
     padding: 1em;
     margin: 1em 1em 0 1em;
-    color:white;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    color: white;
     text-align: center;
 }
 
-.part2{
+.part2 {
     top: 2em;
     display: flex;
     align-items: center;
@@ -57,42 +49,74 @@
     text-align: center;
 }
 
-.background{
-    background-color: #6441A4; 
+.background {
+    background-color: #6441A4;
     width: 100%;
     height: auto;
     padding-bottom: 50px;
 }
 
-.header{
+.header {
     background-color: black;
     padding: 20px;
 }
 
-.logo{
+.logo {
     width: 10%;
     height: 10%;
 }
 
-.globo{
+.globo {
     width: 80%;
     margin: 0 auto;
     color:white;
-
 }
 .row{
-    margin-bottom: 15px;
     width: 100%;
-    height: 150px;
+    height: auto;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 15px 20px 35px 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 7px grey;
+    transition: box-shadow ease-in-out, background 200ms ease-in-out;
+    cursor: pointer;
 }
-.logoF { 
+
+.row a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.row:hover {
+    box-shadow: 0 2px 15px grey;
+}
+
+.logoF {
     width: 145px;
     height: 145px;
     float: left;
     border-radius: 50%;
 }
 
-.row > .usuarioF, .statusF, fans  {
+.usuarioF {
+    margin-top: 0;
+    font-size: 1em;
     text-align: center;
+}
+
+.row, .statusF, .fans {
+    text-align: center;
+    font-size: 1em;
     margin-top: 15px;
+}
+
+@media (max-width: 678px) {
+    .logoF {
+        margin-bottom: 15px;
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+    }
 }
