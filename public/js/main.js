@@ -40,9 +40,9 @@ $(document).ready(function(){
 				// !false = true
 
 			if (!resp.stream) {
-				$("#userStatus").html("STREAMER off");
+				$("#userStatus").html(`En vivo <i style="color: grey" class="fa fa-circle"></i>`);
 			} else {
-				$("#userStatus").html("STREAMER on");
+				$("#userStatus").html(`En vivo <i style="color: red" class="fa fa-circle"></i>`);
 			}
 		}
 	});
