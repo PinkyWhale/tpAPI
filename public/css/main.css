@@ -59,17 +59,19 @@
 .header {
     background-color: black;
     padding: 20px;
+    height: 25px;
 }
 
 .logo {
-    width: 10%;
-    height: 10%;
+    width: auto;
+    height: 30px;
 }
 
 .globo {
     width: 80%;
     margin: 0 auto;
     color:white;
+    margin-bottom: 20px;
 }
 .row{
     width: 100%;
