@@ -19,13 +19,14 @@ Aca si funciona:
 
 const CLIENT_ID = 'ojq7x24ftqbzx1uevy6o5had2c5mbc';
 const BASE_URL = 'https://api.twitch.tv/kraken';
+const USER = 'Pink_Whale';
 
 $(document).ready(function(){
 
 	//Pedido de Status sobre el streaming de un usuario
 	$.ajax({
 		type: "GET",
-		url:`${BASE_URL}/streams/Pink_Whale`,
+		url:`${BASE_URL}/streams/${USER}`,
 		headers:{
 			'Client-ID': CLIENT_ID
 		},
@@ -49,7 +50,7 @@ $(document).ready(function(){
 	//Pedido de Follows
 	$.ajax({
 		type: "GET",
-		url:`${BASE_URL}/users/Pink_Whale/follows/channels/`,
+		url:`${BASE_URL}/users/${USER}/follows/channels/`,
 		headers:{'Client-ID': CLIENT_ID
 	},
 		success: function(response) {
@@ -91,7 +92,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "GET",
-		url: `${BASE_URL}/users/Pink_Whale`,
+		url: `${BASE_URL}/users/${USER}`,
 		headers:{'Client-ID': CLIENT_ID
 	},
 		success: function(user) {
