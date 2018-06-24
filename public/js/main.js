@@ -95,8 +95,9 @@ $(document).ready(function(){
 		headers:{'Client-ID': CLIENT_ID
 	},
 		success: function(user) {
+			const created_at = user.created_at.slice(0, 10);
 			$("#userName").html(user.display_name);
-			$("#createDate").html(user.created_at);
+			$("#createDate").html(created_at);
 			$(".part1").prepend(`<img src='${user.logo}'>`);
 		}
 	})
