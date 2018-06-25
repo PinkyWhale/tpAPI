@@ -16,9 +16,9 @@ var mime_types = {
 http.createServer(function(peticion, respuesta){
    
   //lo que hace segun la url
-   var path_nombre = (url.parse(peticion.url).pathname == '/') ? '/index.html' : url.parse(peticion.url).pathname;
-   // ruta dodne va a buscar los recursos
-   var ruta_a_archivo = 'tpAPI/' + path_nombre;
+   const path_nombre = url.parse(peticion.url).pathname === '/' ? '/index.html' : url.parse(peticion.url).pathname;
+   // ruta donde va a buscar los recursos
+   const ruta_a_archivo =`public/${path_nombre}`;
    
    fs.exists(ruta_a_archivo, function(existe){
       
