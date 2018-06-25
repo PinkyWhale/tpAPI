@@ -39,7 +39,6 @@ $(document).ready(function(){
 				// !false = true
 				
 			if (!resp.stream) {
-			
 				$("#userStatus").html("STREAMER off");
 			} else {
 				$("#userStatus").html("STREAMER on");
@@ -53,59 +52,43 @@ $(document).ready(function(){
 		url:`${BASE_URL}/users/Pink_Whale/follows/channels/`,
 		headers:{'Client-ID': CLIENT_ID
 	},
-		success:function(data2){
-			
-			for (var i = 0; i < data2.follows.length; i++) {
-				console.log(data2.follows[0]);
-					var displayName = data2.follows[i].channel.display_name;
-					var logo = data2.follows[i].channel.logo;
-					var status= data2.follows[i].channel.status;
-				$("#favUs").prepend("<div class ='row'>" + "<div class='logoF'>" +
-				  "<a href='https://www.twitch.tv/"+ displayName+"'><img src='" + logo + 
-				  "'></a>" + "</div>" + "<div class='usuarioF'>" + displayName + "</div>" + 
-				  "<div class='statusF'>" + status + "</div></div>");
-			}
+		success: function(response) {
+			response.follows.map((follow) => {
+			// sacamos del objeto channel las keys, display_name, logo y status (esto se llama DESTRUCTURING ES6)
+			    const {
+			    	display_name,
+			    	logo,
+			    	status,
+			    } = follow.channel;
+    
+			    $("#favUs").prepend(`
+			       <div class="row" >
+			    	   <div class="logoF">
+			    	       <a href="https://www.twich.tv/${display_name}" target="_blank">
+			    	           <img src="${logo}">
+			    	       </a>
+			    	   </div>
+			    	   <div class= usuarioF>
+			    	        ${display_name}
+			    	   </div>  
+			    	   <div class="statusF">
+			    			${status}
+			    	   </div> 
+			       </div>     
+			    `);
+	        }); 
 		}
-	});
+    });
 
 	$.ajax({
 		type: "GET",
 		url: `${BASE_URL}/users/Pink_Whale`,
 		headers:{'Client-ID': CLIENT_ID
 	},
-		success:function(data3){
-			
-			console.log(data3.display_name);
-			$("#userName").html(data3.display_name);
-			
+		success: function(user) {			
+			$("#userName").html(user.display_name);
+			$("#createDate").html(user.created_at);
+			$(".part1").prepend(`<img src='${user.logo}'>`);
 		}
 	})
-
-	$.ajax({
-		type: "GET",
-		url:`${BASE_URL}/users/Pink_Whale`,
-		headers:{'Client-ID': CLIENT_ID
-	},
-		success:function(data4){
-			
-			console.log(data4.created_at);
-			$("#createDate").html(data4.created_at);
-
-		}
-	})
-
-	$.ajax({
-		type: "GET",
-		url: `${BASE_URL}/users/Pink_Whale`,
-		headers:{'Client-ID': CLIENT_ID
-	},
-		success:function(data5){
-			
-			console.log(data5.logo); // en console de html aparece la url pero no puedo hacerlo aparecer
-			$(".part1").prepend("<img src='" + data5.logo + "'>");
-
-		}
-	})
-
-	
 });
