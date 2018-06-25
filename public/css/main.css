@@ -36,10 +36,11 @@
 }
 
 .encabezado h2 {
-    padding: 1em;
+    padding: 0.5em;
     margin: 1em 1em 0 1em;
     color: white;
     text-align: center;
+    font-size:2em;
 }
 
 .part2 {
@@ -105,6 +106,9 @@
     margin-top: 0;
     font-size: 1em;
     text-align: center;
+    color: #6441A4;
+    font-weight: bold;
+    font-size:2em;
 }
 
 .row, .statusF, .fans {
