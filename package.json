@@ -1,0 +1,24 @@
+{
+  "name": "tpAPI",
+  "version": "1.0.0",
+  "description": "TP API\r ======",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PinkyWhale/tpAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PinkyWhale/tpAPI/issues"
+  },
+  "homepage": "https://github.com/PinkyWhale/tpAPI#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}

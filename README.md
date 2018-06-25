@@ -3,11 +3,12 @@ TP API
 
 Para levantar el server hay que ubicarse en la carpeta en donde se encuentra el archivo server.js, abrir la terminal y escribir lo siguiente
 
-	- pinky@pingui ~/Ada/tpAPI/ (git)-[master] % node server.js
+	- npm start
 	
-Si tienen Nodemon lo siguiente:
+Si quieres correr un wicher de desarrollo ([Nodemon](https://github.com/remy/nodemon))
 
-	- pinky@pingui ~/Ada/TPcharlaAPI (git)-[master] % nodemon server.js 
+	- npm install
+	- npm run start:dev
 
 
 Aparecera el siguiente mensaje:
