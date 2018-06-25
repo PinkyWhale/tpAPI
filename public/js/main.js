@@ -17,29 +17,42 @@ Aca si funciona:
 
 */
 
+const CLIENT_ID = 'ojq7x24ftqbzx1uevy6o5had2c5mbc';
+const BASE_URL = 'https://api.twitch.tv/kraken';
+
 $(document).ready(function(){
 
-	//Pedido de Status de Usuario
+	//Pedido de Status sobre el streaming de un usuario
 	$.ajax({
 		type: "GET",
-		url:'https://api.twitch.tv/kraken/streams/Pink_Whale',
+		url:`${BASE_URL}/streams/Pink_Whale`,
 		headers:{
-			'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
-		success:function(data1){
+			'Client-ID': CLIENT_ID
+		},
+		success: function(resp) {
+
+				// !null = true
+				// !undefind = true
+				// !0 = true
+				// !'' = true
+				// !!{} = true
+				// !false = true
+				
+			if (!resp.stream) {
 			
-			if(data1.stream === null){
 				$("#userStatus").html("STREAMER off");
-			}else{
+			} else {
 				$("#userStatus").html("STREAMER on");
-			};	
+			}	
 		}
 	});
-
+ 
 	//Pedido de Follows
 	$.ajax({
 		type: "GET",
-		url:'https://api.twitch.tv/kraken/users/Pink_Whale/follows/channels/',
-		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		url:`${BASE_URL}/users/Pink_Whale/follows/channels/`,
+		headers:{'Client-ID': CLIENT_ID
+	},
 		success:function(data2){
 			
 			for (var i = 0; i < data2.follows.length; i++) {
@@ -57,8 +70,9 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "GET",
-		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
-		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		url: `${BASE_URL}/users/Pink_Whale`,
+		headers:{'Client-ID': CLIENT_ID
+	},
 		success:function(data3){
 			
 			console.log(data3.display_name);
@@ -69,8 +83,9 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "GET",
-		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
-		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		url:`${BASE_URL}/users/Pink_Whale`,
+		headers:{'Client-ID': CLIENT_ID
+	},
 		success:function(data4){
 			
 			console.log(data4.created_at);
@@ -81,8 +96,9 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "GET",
-		url: "https://api.twitch.tv/kraken/users/Pink_Whale?client_id=ojq7x24ftqbzx1uevy6o5had2c5mbc",
-		headers:{'Client-ID': 'ojq7x24ftqbzx1uevy6o5had2c5mbc'},
+		url: `${BASE_URL}/users/Pink_Whale`,
+		headers:{'Client-ID': CLIENT_ID
+	},
 		success:function(data5){
 			
 			console.log(data5.logo); // en console de html aparece la url pero no puedo hacerlo aparecer
