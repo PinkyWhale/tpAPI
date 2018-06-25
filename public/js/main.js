@@ -63,9 +63,9 @@ $(document).ready(function(){
     
 			    $("#favUs").prepend(`
 			       <div class="row" >
-			    	   <div class="logoF">
-			    	       <a href="https://www.twich.tv/${display_name}" target="_blank">
-			    	           <img src="${logo}">
+			    	   <div class="logo-container">
+			    	       <a href="https://www.twitch.tv/${display_name}" target="_blank">
+			    	           <img src="${logo}" class="logoF">
 			    	       </a>
 			    	   </div>
 			    	   <div class= usuarioF>

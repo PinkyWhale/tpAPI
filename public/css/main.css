@@ -81,20 +81,18 @@
 
 }
 .row{
-    width: 90%;
+    margin-bottom: 15px;
+    width: 100%;
     height: 150px;
 }
-.logoF img{ 
+.logoF { 
     width: 145px;
     height: 145px;
     float: left;
+    border-radius: 50%;
 }
 
-.usuarioF{
+.row > .usuarioF, .statusF, fans  {
     text-align: center;
-    padding-top: 20px;
-}
-.statusF{
-    text-align: center;
-    padding-top: 20px;
+    margin-top: 15px;
 }
