@@ -19,7 +19,7 @@ Aca si funciona:
 
 const CLIENT_ID = 'ojq7x24ftqbzx1uevy6o5had2c5mbc';
 const BASE_URL = 'https://api.twitch.tv/kraken';
-const USER = 'Pink_Whale';
+const USER = 'speedrunsespanol';
 
 $(document).ready(function(){
 
